@@ -187,7 +187,7 @@ def safe_realtype_unconst(t0):
 
 def shallow_const(t):
     t = safe_realtype_shallow(t)
-    while not t.const and isinstance(t, (TArray, TVector)):
+    while not t.const and isinstance(t, TArray):
         t = safe_realtype_shallow(t.base)
 
     return t.const
