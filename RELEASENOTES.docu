@@ -1775,4 +1775,12 @@ extern typedef struct { } my_type_t;</pre> </add-note></build-id>
       the <tt>dead_dml_methods</tt> library, which caused it to never
       detect methods as dead if they occur directly after
       a <tt>footer</tt> block.</add-note></build-id>
+  <build-id _6="next" _7="next"><add-note>Typechecking has been reworked
+      to be more strict, and more accurately reject type mismatch that would
+      result in invalid C. To avoid breakage in corners where DMLC is entirely
+      responsible for proper typechecking, such as uses of <tt>extern</tt>
+      macros or method overrides, the legacy lenient typechecking is still used
+      by default with Simics API version 7 or below. The strict typechecking can
+      be enabled by passing <tt>--no-compat=lenient_typechecking</tt> to
+      DMLC.</add-note></build-id>
 </rn>
